@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import "./globals.css";
 import Navbar from './components/navbar-footer/Navbar'
 import Footer from './components/navbar-footer/Footer'
@@ -35,6 +36,7 @@ export default function RootLayout({
         {children}
         <Whatsapp />
         <Footer />
+        <SpeedInsights />
       </body>
     </html>
   );
