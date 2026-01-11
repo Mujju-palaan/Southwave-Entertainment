@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import dropdownNavs from "../../data/NavbarData";
 import Image from "next/image";
+import NavLink from "./NavLink";
 
 const Navbar = () => {
   const [state, setState] = useState(false);
@@ -90,13 +91,13 @@ const Navbar = () => {
               state ? "block" : "hidden"
             }`}
           >
-            <ul className="items-center space-y-4 md:flex md:space-x-6 md:space-y-0 text-[16px]">
+            <ul className="items-center space-y-4 md:flex md:space-x-8 md:space-y-0 text-[16px] font-semibold">
               {navigation.map((item, idx) => {
                 return (
                   <li key={idx}>
                     {item.isDrapdown ? (
                       <button
-                        className="w-full flex items-center justify-between gap-1 text-white-700 hover:text-gray-600"
+                        className="w-full flex items-center justify-between gap-1 text-gray-700 hover:text-orange-700"
                         onClick={() =>
                           setDrapdownState({
                             idx,
@@ -104,6 +105,7 @@ const Navbar = () => {
                           })
                         }
                       >
+                      
                         {item.title}
                         {drapdownState.idx == idx && drapdownState.isActive ? (
                           <svg
@@ -134,18 +136,18 @@ const Navbar = () => {
                         )}
                       </button>
                     ) : (
-                      <a
+                      <NavLink
                         href={item.path}
-                        className="block text-white-700 hover:text-gray-600"
+                        className="block "
                       >
                         {item.title}
-                      </a>
+                      </NavLink>
                     )}
                     {item.isDrapdown &&
                     drapdownState.idx == idx &&
                     drapdownState.isActive ? (
                       <div className="bg-white dark:bg-gray-700 mt-6 inset-x-0 top-20 w-full md:absolute md:border-y md:shadow-md md:mt-0">
-                        <ul className="max-w-screen-xl mx-auto grid items-center gap-6 md:p-8 md:grid-cols-2 lg:grid-cols-3">
+                        <ul className="max-w-screen-xl mx-auto grid items-center gap-6 rounded p-4 md:p-8 md:grid-cols-2 lg:grid-cols-3">
                           {item?.navs.map((dropdownItem, idx) => (
                             <li key={idx}>
                               <p className="text-indigo-600 text-sm">
