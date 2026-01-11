@@ -2,9 +2,15 @@
 import { useEffect, useState } from "react";
 import dropdownNavs from "../../data/NavbarData";
 import Image from "next/image";
-import Link from "next/link";
 
 const Navbar = () => {
+  const [state, setState] = useState(false);
+  const [drapdownState, setDrapdownState] = useState({
+    isActive: false,
+    idx: null,
+  });
+
+  // Replace javascript:void(0) paths with your paths
   const navigation = [
     { title: "Home", path: "/", isDrapdown: false },
     {
@@ -15,18 +21,9 @@ const Navbar = () => {
     },
     { title: "Events", path: "/events", isDrapdown: false },
     { title: "Service", path: "/service", isDrapdown: false },
-    { title: "About us", path: "/about", isDrapdown: false },
-
+    { title: "About", path: "/about", isDrapdown: false },
     { title: "Contact", path: "/contact", isDrapdown: false },
-    // { title: "Support", path: "/support", isDrapdown: false },
-    // { title: "Faq's", path: "/faqs", isDrapdown: false },
   ];
-
-  const [state, setState] = useState(false);
-  const [drapdownState, setDrapdownState] = useState({
-    isActive: false,
-    idx: null,
-  });
 
   useEffect(() => {
     document.onclick = (e) => {
@@ -43,16 +40,16 @@ const Navbar = () => {
           state ? "shadow-lg rounded-b-xl md:shadow-none" : ""
         }`}
       >
-        <div className="items-center gap-14 px-4 max-w-screen-xl mx-auto md:flex md:px-8 md:text-[18px]">
+        <div className="items-center gap-x-14 px-4 max-w-screen-xl mx-auto md:flex md:px-8">
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
-            <Link href="/">
+            <a href="/home">
               <Image
                 src="/company/logo-removebg.png"
                 width={120}
                 height={30}
-                alt="SOUTHWAVE ENTERTAINMENT"
+                alt="AF AutoGloss logo"
               />
-            </Link>
+            </a>
             <div className="md:hidden">
               <button
                 className="text-white-500 hover:text-gray-800"
@@ -93,7 +90,7 @@ const Navbar = () => {
               state ? "block" : "hidden"
             }`}
           >
-            <ul className="items-center gap-6 md:flex md:space-x-6 md:space-y-0">
+            <ul className="items-center space-y-4 md:flex md:space-x-6 md:space-y-0 text-[16px]">
               {navigation.map((item, idx) => {
                 return (
                   <li key={idx}>
