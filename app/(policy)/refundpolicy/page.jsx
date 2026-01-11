@@ -2,7 +2,7 @@ import React from 'react'
 
 const RefunfPolicy = () => {
   return (
-    <div>RefunfPolicy</div>
+    <div className='min-h-screen'>RefunfPolicy</div>
   )
 }
 

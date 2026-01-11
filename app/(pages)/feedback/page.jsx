@@ -2,7 +2,7 @@ import React from 'react'
 
 const Feedback = () => {
   return (
-    <div>Feedback</div>
+    <div className='min-h-screen'>Feedback</div>
   )
 }
 
