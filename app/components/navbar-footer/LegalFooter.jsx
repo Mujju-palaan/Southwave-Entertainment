@@ -21,12 +21,12 @@ const LegalFooter = () => {
       icon: FaFacebook,
     },
     {
-      color: "text-[#ee2a7b]",
+      color: "text-[#5865F2]",
       href: "https://www.discord.com/southwave_london/#",
       icon: FaDiscord,
     },
     {
-      color: "text-blue-700",
+      color: "text-blue-500",
       href: "https://www.twitter.com/southwave_london/#",
       icon: FaTwitter ,
     },
