@@ -1,9 +1,12 @@
-import React from 'react'
+
+import Banner from "../../../components/about/Banner";
 
 const About = () => {
   return (
-    <div className='min-h-screen'>About</div>
-  )
-}
+    <div className="min-h-screen">
+      <Banner />
+    </div>
+  );
+};
 
-export default About
+export default About;

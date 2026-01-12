@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import "./globals.css";
-import Navbar from './components/navbar-footer/Navbar'
-import Footer from './components/navbar-footer/Footer'
-import Whatsapp from './components/whatsapp/Whatsapp'
+import Navbar from '../components/navbar-footer/Navbar'
+import Footer from '../components/navbar-footer/Footer'
+import Whatsapp from '../components/whatsapp/Whatsapp'
 
 
 const geistSans = Geist({

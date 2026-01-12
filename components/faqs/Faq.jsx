@@ -1,10 +1,10 @@
 'use client'
 import Image from 'next/image'
-import { Container } from '../../components/faqs/container';
+import { Container } from './container';
 import backgroundImage from '@/public/background-faqs.jpg'
 import {useState} from 'react';
 import {ChevronUpIcon, ChevronDownIcon} from 'lucide-react';
-import FaqsData from '../../data/FaqsData'
+import FaqsData from "../../app/data/FaqsData"
 
 const Faq = () => {
   const [openQuestion, setOpenQuestion] = useState(null);

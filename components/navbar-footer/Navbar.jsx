@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import dropdownNavs from "../../data/NavbarData";
+import dropdownNavs from "@/app/data/NavbarData";
 import Image from "next/image";
 import NavLink from "./NavLink";
 

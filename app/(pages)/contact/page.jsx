@@ -1,5 +1,5 @@
-import ContactDetails from "../../components/contact/ContactDetails";
-import ContactForm from "../../components/contact/ContactForm";
+import ContactDetails from "../../../components/contact/ContactDetails";
+import ContactForm from "../../../components/contact/ContactForm";
 
 const Contact = () => {
   return (
@@ -12,7 +12,7 @@ const Contact = () => {
           Contact Our Team
         </h1>
 
-        <div className="text-center text-stone-600 mt-2 sm:text-xl text-[12px] md:p-6 px-8">
+        <div className="text-center text-stone-600 mt-2 sm:text-xl text-[12px] md:p-6 px-6">
           <p>
             Got an question about the product or scaling on our platform? We're
             here to help.

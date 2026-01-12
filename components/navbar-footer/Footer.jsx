@@ -1,5 +1,5 @@
  'use client'
-import { navigation } from '../../data/FooterData'
+import { navigation } from "@/app/data/FooterData"
 import Image from "next/image";
 import LegalFooter from './LegalFooter'
 
