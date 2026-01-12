@@ -75,7 +75,8 @@ export default function ContactForm() {
   }
 
   return (
-    <Card className="w-full sm:max-w-md">
+    // ---------min or max -----------
+    <Card className="sm:min-w-sm w-full md:m-2">
       {/* <CardHeader>
         <CardTitle>Support</CardTitle>
         <CardDescription>
@@ -96,7 +97,7 @@ export default function ContactForm() {
               render={({ field, fieldState }) => (
                 <Field data-invalid={fieldState.invalid} className="flex flex-col gap-1">
                   <FieldLabel htmlFor="title" className="text-[12px]">First Name</FieldLabel>
-                  <Input
+                  <Input className="md:text-sm text-xs"
                     {...field}
                     id="firstname"
                     placeholder="First Name"
@@ -112,7 +113,7 @@ export default function ContactForm() {
               render={({ field, fieldState }) => (
                 <Field data-invalid={fieldState.invalid} className="flex flex-col gap-1">
                   <FieldLabel htmlFor="title" className="text-[12px]">Last Name</FieldLabel>
-                  <Input
+                  <Input className="md:text-sm text-xs"
                     {...field}
                     id="lastname"
                     placeholder="Last Name"
@@ -130,7 +131,7 @@ export default function ContactForm() {
               render={({ field, fieldState }) => (
                 <Field data-invalid={fieldState.invalid} className="flex flex-col gap-1">
                   <FieldLabel htmlFor="title" className="text-[12px]">Email</FieldLabel>
-                  <Input
+                  <Input className="md:text-sm text-xs"
                     {...field}
                     id="email"
                     type="email"
@@ -147,7 +148,7 @@ export default function ContactForm() {
               render={({ field, fieldState }) => (
                 <Field data-invalid={fieldState.invalid} className="flex flex-col gap-1">
                   <FieldLabel htmlFor="title" className="text-[12px]">Phone Number</FieldLabel>
-                  <Input
+                  <Input className="md:text-sm text-xs"
                     {...field}
                     id="phone"
                     type="number"
@@ -164,7 +165,7 @@ export default function ContactForm() {
               control={form.control}
               render={({ field, fieldState }) => (
                 <Field data-invalid={fieldState.invalid} className="flex flex-col gap-1">
-                  <FieldLabel htmlFor="description" className="text-[12px]">
+                  <FieldLabel htmlFor="description" className="md:text-sm text-xs">
                     Description
                   </FieldLabel>
 
@@ -177,13 +178,13 @@ export default function ContactForm() {
                       aria-invalid={fieldState.invalid}
                     />
                     <InputGroupAddon align="block-end">
-                      <InputGroupText>
+                      <InputGroupText className="md:text-sm text-xs">
                         {field.value.length}/100
                       </InputGroupText>
                     </InputGroupAddon>
                   </InputGroup>
 
-                  <FieldDescription>
+                  <FieldDescription className="md:text-sm text-xs">
                     Include steps to reproduce and expected behavior.
                   </FieldDescription>
 

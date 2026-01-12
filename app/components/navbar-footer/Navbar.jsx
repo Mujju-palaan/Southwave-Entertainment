@@ -87,11 +87,12 @@ const Navbar = () => {
             </div>
           </div>
           <div
-            className={`nav-menu flex-1 pb-3 mt-0 md:block md:pb-0 md:mt-0 ${
+            className={`nav-menu flex-2 pb-3 mt-0 md:block md:pb-0 md:mt-0 ${
               state ? "block" : "hidden"
             }`}
           >
-            <ul className="items-center space-y-2 md:flex md:space-x-8 md:space-y-0 text-[14px] md:text-[18px] md:font-semibold">
+            <ul className="items-center space-y-3 md:flex lg:space-x-8 space-x-2 md:space-y-0 
+                text-[14px] lg:text-[18px] font-semibold text-stone-800">
               {navigation.map((item, idx) => {
                 return (
                   <li key={idx}>
