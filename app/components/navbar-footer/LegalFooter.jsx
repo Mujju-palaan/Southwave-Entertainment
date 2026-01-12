@@ -40,10 +40,10 @@ const LegalFooter = () => {
     <div className="max-w-7xl mx-auto px-4 md:px-8">
       <div className="py-8 border-t border-gray-700 items-center justify-between sm:flex">
         <Fragment>
-          <p className="text-gray-500">{`© ${year} Southwave Entertainment LTD. All rights reserved.`}</p>
+          <p className="text-gray-500 text-xs text-center">{`© ${year} Southwave Entertainment LTD. All rights reserved.`}</p>
         </Fragment>
 
-        <div className="flex items-center gap-x-6 text-gray-400 mt-6 md:pr-15">
+        <div className="flex justify-center gap-x-6 hover:text-gray-400 mt-6 md:pr-15">
           {socialData.map(({ icon: Icon, href, color }, index) => (
             <Link
               key={index}
