@@ -1,9 +1,11 @@
 import BlogSwiper from "../components/blog/BlogSwiper";
 import OngoingEvents from "../components/events/OngoingEvents";
+import Status from "../components/home/Status";
 
 export default function Home() {
   return (
     <div className="">
+      <Status />
       <OngoingEvents />
 
       <div>
