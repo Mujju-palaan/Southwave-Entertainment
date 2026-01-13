@@ -21,7 +21,7 @@ const Navbar = () => {
       navs: dropdownNavs,
     },
     { title: "Events", path: "/events", isDrapdown: false },
-    { title: "Service", path: "/service", isDrapdown: false },
+    { title: "Gallery", path: "/gallery", isDrapdown: false },
     { title: "About", path: "/about", isDrapdown: false },
     { title: "Contact", path: "/contact", isDrapdown: false },
   ];

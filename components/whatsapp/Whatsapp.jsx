@@ -1,5 +1,4 @@
 'use client'
-import React from 'react'
 import { FloatingWhatsApp } from 'react-floating-whatsapp'
 
 const Whatsapp = () => {
@@ -14,12 +13,14 @@ const Whatsapp = () => {
         chatMessage="Hello there! 🤝 How can we help?"
         placeholder="Type a message.."
         darkMode={false} // ✅ You can toggle this based on theme
-        allowClickAway={true}
+        allowClickAway={false}
         allowEsc={false}
-        height={350}
+        height={360}
         notification={true}
         notificationDelay={20}
-        notificationSound={true} // ✅ Optional
+        notificationSound={true}
+        onLoopDone={1} // ✅ Optional
+        
         styles={{
           boxShadow: '0 4px 24px rgba(0,0,0,0.18)',
           borderRadius: '18px',

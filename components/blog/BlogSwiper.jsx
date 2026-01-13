@@ -36,8 +36,8 @@ const BlogSwiper = () => {
         <SwiperSlide key={data.id}>
           <Link
             href={`/blogs/${data.id}`}
-            className="md:m-8 mb-4 flex flex-col gap-2 rounded cursor-pointer
-              border-b border-stone-300 md:p-4 hover:shadow-lg transition-shadow duration-300"
+            className="md:m-8 mb-4 flex flex-col gap-2 rounded-xl cursor-pointer
+               md:p-4 shadow-lg transition-shadow duration-300"
           >
             {/* Image wrapper MUST have height */}
             <div className="relative h-full w-full overflow-hidden rounded-xl">

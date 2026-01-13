@@ -7,17 +7,17 @@ const BlogCard = ({ id,img, name, venue, date, description, categories }) => {
   return (
     <Link
       href={`/blogs/${id}`}
-      className="m-4 w-full md:w-1/4 flex flex-col gap-2 rounded cursor-pointer
-      border-b border-stone-300 p-4 hover:shadow-lg transition-shadow duration-300"
+      className="m-4 w-full md:w-1/4 flex flex-col gap-2 rounded-xl cursor-pointer
+       p-4 shadow-lg transition-shadow duration-300"
     >
       {/* Image wrapper MUST have height */}
-      <div className="relative h-50 w-full overflow-hidden rounded-xl">
+      <div className="relative h-45 w-full overflow-hidden rounded-xl">
         <Image
           src={img}
           alt={venue}
           className="object-cover"
           height={250}
-          width={250}
+          width={300}
         //   unoptimized
         />
       </div>
