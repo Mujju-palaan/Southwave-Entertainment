@@ -21,9 +21,9 @@ const BlogSwiper = () => {
       slidesPerView={1}
       loop={true}
       autoplay={{
-        delay: 3000,
+        delay: 1200,
         disableOnInteraction: false,
-        pauseOnMouseEnter: true,
+        pauseOnMouseEnter: false,
       }}
       pagination={{ clickable: true }}
       breakpoints={{

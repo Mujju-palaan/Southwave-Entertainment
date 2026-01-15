@@ -1,15 +1,31 @@
-import CompletedEvents from "../../../components/events/CompletedEvents"
-import UpcommingEvents from "../../../components/events/UpcommingEvents"
-import OngoingEvents from "../../../components/events/OngoingEvents"
+import UpcomingEventsData from "../../data/EventsUpcomingData";
+import OngoingEventsData from "../../data/EventsOngoingData";
+import CompletedEventsData from "../../data/EventsCompletedData";
+import Event from "../../../components/events/Event";
 
 const Events = () => {
   return (
-    <div className="">
-      <UpcommingEvents />
-      <OngoingEvents />
-      <CompletedEvents />
-    </div>
-  )
-}
+    <>
+      <Event
+        heading={`Upcomming Event`}
+        description={`In London our events have connected thousands across borders and cultures. Explore the moments we brought to life.`}
+        EventsData={UpcomingEventsData}
+      />
 
-export default Events
+      <Event
+        heading={`Live Events`}
+        description={`In London our events have connected thousands across borders and cultures. Explore the moments we brought to life.`}
+        EventsData={OngoingEventsData}
+      />
+
+      <Event
+        heading={`Events we hosted`}
+        description={`In London our events have connected thousands across borders and cultures. Explore the moments we brought to life.`}
+        EventsData={CompletedEventsData}
+      />
+
+    </>
+  );
+};
+
+export default Events;

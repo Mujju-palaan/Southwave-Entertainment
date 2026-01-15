@@ -1,33 +1,98 @@
-import Image from "next/image";
-import React from "react";
+"use client";
 
+import {
+  motion,
+  useMotionValue,
+  animate,
+  useMotionValueEvent,
+  useInView,
+} from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
+
+/* ---------------- Reusable Counter ---------------- */
+const Counter = ({ to, suffix }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  const motionValue = useMotionValue(0);
+  const [value, setValue] = useState(0);
+
+  useMotionValueEvent(motionValue, "change", (latest) => {
+    setValue(Math.round(latest));
+  });
+
+  useEffect(() => {
+    if (!isInView) return;
+
+    const controls = animate(motionValue, to, {
+      duration: 2.5,
+      ease: "easeOut",
+    });
+
+    return controls.stop;
+  }, [isInView, motionValue, to]);
+
+  return (
+    <p ref={ref} className="text-xl md:text-4xl font-bold">
+      {value}
+      {suffix}
+    </p>
+  );
+};
+
+/* ---------------- Status Section ---------------- */
 const Status = () => {
   return (
     <div className="relative md:h-[420px] w-full overflow-hidden">
       <Image
-        src="https://images.unsplash.com/photo-1581245869344-f9915e401773?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        className="h-full w-full md:object-cover object-contain rounded block"
+        src="https://images.unsplash.com/photo-1581245869344-f9915e401773?w=870&auto=format&fit=crop"
         alt="About Us"
-        width="800"
-        height="420"
+        width={800}
+        height={420}
+        className="h-full w-full object-cover"
+        priority
       />
 
       <div
-        className="absolute inset-0 flex items-center text-center font-sans justify-around  bg-black/30
-        text-white/90 md:text-4xl text-2xl font-bold tracking-widest "
+        className="absolute inset-0 flex items-center justify-around bg-black/30
+        text-white/90 text-center font-sans tracking-widest text-sm md:text-3xl font-semibold"
       >
-        <span>
-          <p>100+</p>
+        {/* Events Organised */}
+        <motion.span
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
+          viewport={{ once: true }}
+          className="flex flex-col items-center gap-1"
+        >
+          <Counter to={100} suffix="+" />
           <p>Events Organised</p>
-        </span>
-        <span>
-          <p>100%</p>
+        </motion.span>
+
+        {/* Clients Satisfied */}
+        <motion.span
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, delay: 0.1 }}
+          viewport={{ once: true }}
+          className="flex flex-col items-center gap-1"
+        >
+          <Counter to={100} suffix="%" />
           <p>Clients Satisfied</p>
-        </span>
-        <span>
-          <p>80+</p>
-          <p>Dance Foors</p>
-        </span>
+        </motion.span>
+
+        {/* Dance Floors */}
+        <motion.span
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="flex flex-col items-center gap-1"
+        >
+          <Counter to={60} suffix="+" />
+          <p>Dance Floors</p>
+        </motion.span>
       </div>
     </div>
   );
