@@ -6,6 +6,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const EventsSwiper = ({ EventsData }) => {
   return (
@@ -37,14 +38,18 @@ const EventsSwiper = ({ EventsData }) => {
                 "
             >
               {/* Image wrapper MUST have height */}
-              <div className="relative h-90 overflow-hidden block rounded">
+              <motion.div
+                whileHover={{ scale: 1.08 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+                className="relative h-90 overflow-hidden block rounded"
+              >
                 <Image
                   src={data.image}
                   alt={data.id}
                   className="object-cover rounded-xl"
                   fill
                 />
-              </div>
+              </motion.div>
             </Link>
           </SwiperSlide>
         ))}
