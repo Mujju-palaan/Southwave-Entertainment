@@ -1,22 +1,56 @@
-'use client'
+"use client";
 import Image from "next/image";
 import { MdArrowOutward } from "react-icons/md";
 import { GoDotFill } from "react-icons/go";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 
-const BlogCard = ({ id,img, name, venue, date, description, categories }) => {
+const BlogCard = ({ id, img, name, venue, date, description, categories }) => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkScreen = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
   return (
     <motion.div
-    whileHover={{
+      whileHover={{
         y: -10,
         scale: 1.03,
         boxShadow: "0px 30px 60px rgba(0,0,0,0.22)",
       }}
-      transition={{ type: "spring", stiffness: 220, damping: 20 }}
+      animate={
+        isMobile
+          ? {
+              rotate: [0, -1, 1, -1, 0],
+              filter: [
+                "drop-shadow(0 0 0 rgba(99,102,241,0))",
+                "drop-shadow(0 0 25px rgba(99,102,241,0.85))",
+                "drop-shadow(0 0 0 rgba(99,102,241,0))",
+              ],
+            }
+          : {}
+      }
+      transition={
+        isMobile
+          ? {
+              duration: 0.8,
+              ease: "easeInOut",
+              repeat: Infinity,
+            }
+          : {}
+      }
+      // transition={{ type: "spring", stiffness: 220, damping: 20 }}
       href={`/blogs/${id}`}
       className="m-4 w-full md:w-1/4 flex flex-col gap-2 rounded-xl cursor-pointer
-       p-4 shadow-lg transition-shadow duration-300"
+       p-4 md:shadow-lg shadow-2xl transition-shadow duration-300"
     >
       {/* Image wrapper MUST have height */}
       <div className="relative h-45 w-full overflow-hidden rounded-xl">
@@ -26,7 +60,7 @@ const BlogCard = ({ id,img, name, venue, date, description, categories }) => {
           className="object-cover"
           height={250}
           width={300}
-        //   unoptimized
+          //   unoptimized
         />
       </div>
 

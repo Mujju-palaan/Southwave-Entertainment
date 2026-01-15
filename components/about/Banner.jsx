@@ -2,10 +2,10 @@ import Image from "next/image";
 
 const Banner = () => {
   return (
-    <div className="relative md:h-[420px] w-full overflow-hidden">
+    <div className="relative md:h-[420px] h-full w-full overflow-hidden">
       <Image
         src="/about/about-banner.jpg"
-        className="h-full w-full md:object-cover object-contain rounded-xl"
+        className="h-full w-full object-cover"
         alt="About Us"
         width="800"
         height="420"

@@ -1,8 +1,12 @@
+"use client";
 import React from "react";
+import Live from "../../../components/events/Live";
 
 const Gallery = () => {
   return (
-   <div className="flex items-center justify-center">GAllery</div>
+    <div>
+      <Live />
+    </div>
   );
 };
 
