@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import dropdownNavs from "@/app/data/NavbarData";
 import Image from "next/image";
 import NavLink from "./NavLink";
+import Link from "next/link";
 
 const Navbar = () => {
   const [state, setState] = useState(false);
@@ -10,6 +11,10 @@ const Navbar = () => {
     isActive: false,
     idx: null,
   });
+
+    // 🔹 Scroll-based visibility states
+  const [showNav, setShowNav] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   // Replace javascript:void(0) paths with your paths
   const navigation = [
@@ -34,23 +39,48 @@ const Navbar = () => {
     };
   }, []);
 
+  // 🔹 Scroll hide / show logic
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY < 80) {
+        setShowNav(true);
+      } else if (currentScrollY > lastScrollY) {
+        setShowNav(false);
+      } else {
+        setShowNav(true);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
+
+
   return (
     <>
+    {/* ---mobile----- */}
       <nav
-        className={`relative z-20 bg-darkgrey w-full md:static md:text-sm md:border-none ${
-          state ? "shadow-lg rounded-b-xl md:shadow-none" : ""
-        }`}
+        className={`
+          fixed top-0 w-full z-30 
+          transition-transform duration-300 ease-in-out
+          ${showNav ? "translate-y-0 bg-white/70 backdrop-blur-sm" : "-translate-y-full "}
+          ${state ? "shadow-lg rounded-b-xl md:shadow-none " : ""}
+        `}
       >
         <div className="items-center gap-x-14 px-4 max-w-screen-xl mx-auto md:flex md:px-8">
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
-            <a href="/home">
+            <Link href="/">
               <Image
                 src="/company/logo-removebg.png"
                 width={120}
                 height={30}
                 alt="AF AutoGloss logo"
               />
-            </a>
+            </Link>
             <div className="md:hidden">
               <button
                 className="text-white-500 hover:text-gray-800"

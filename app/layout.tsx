@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import "./globals.css";
 import Navbar from '../components/navbar-footer/Navbar'
+import NavEdit from '../components/navbar-footer/NavEdit'
+
 import Footer from '../components/navbar-footer/Footer'
 import Whatsapp from '../components/whatsapp/Whatsapp'
 
@@ -33,6 +35,8 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Navbar />
+        {/* <NavEdit /> */}
+        <div className="pb-25"></div>
         {children}
         <Whatsapp />
         <Footer />
