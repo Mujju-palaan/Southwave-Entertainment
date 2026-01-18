@@ -2,7 +2,7 @@ import UpcomingEventsData from "../../data/EventsUpcomingData";
 import OngoingEventsData from "../../data/EventsOngoingData";
 import CompletedEventsData from "../../data/EventsCompletedData";
 import Event from "../../../components/events/Event";
-import Live from "../components/events/Live";
+import Live from "../../../components/events/Live";
 
 
 const Events = () => {
