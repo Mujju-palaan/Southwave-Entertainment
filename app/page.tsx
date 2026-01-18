@@ -2,24 +2,26 @@ import BlogSwiper from "../components/blog/BlogSwiper";
 import Event from "../components/events/Event";
 import OngoingEventsData from "./data/EventsOngoingData";
 import Status from "../components/home/Status";
-import Bannervideo from '../components/home/Bannervideo'
+import Bannervideo from "../components/home/Bannervideo";
 import ServiceMenu from "../components/services/ServiceMenu";
 import Live from "../components/events/Live";
-
-
 
 export default function Home() {
   return (
     <div>
       <Bannervideo />
-      
-      {/* ------------- Eeents  ------------- */}
-      
-      <Event
+
+      {/* ------------- Events  ------------- */}
+      <Live
+        heading={`Live Events`}
+        description={`In London our events have connected thousands across borders and cultures. Explore the moments we brought to life.`}
+      />
+
+      {/* <Event
         heading={`Live Events`}
         description={`In London our events have connected thousands across borders and cultures. Explore the moments we brought to life.`}
         EventsData={OngoingEventsData}
-      />
+      /> */}
       {/* <Live /> */}
 
       <ServiceMenu />
