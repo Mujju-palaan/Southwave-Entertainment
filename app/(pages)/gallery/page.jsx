@@ -1,11 +1,11 @@
 "use client";
 import React from "react";
-import Live from "../../../components/events/Live";
+import GalleryTabs from "../../../components/gallery/GalleryTabs";
 
 const Gallery = () => {
   return (
     <div>
-      <Live />
+      <GalleryTabs />
     </div>
   );
 };
