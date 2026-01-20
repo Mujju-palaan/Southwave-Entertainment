@@ -8,18 +8,18 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-const EventsSwiper = ({ EventsData }) => {
+const EventsSwiper = ({ EventsData, delaytime }) => {
   return (
     <>
       {/* <h1 className="font-serif md:text-6xl text-2xl md:px-30 px-8 md:py-8 py-2"></h1> */}
       <Swiper
-        className="flex w-[82%]"
+        className="flex md:w-[82%] w-[90%] h-full"
         modules={[Navigation, Pagination, A11y, Autoplay]}
         spaceBetween={60}
         slidesPerView={1}
         loop={true}
         autoplay={{
-          delay: 1100,
+          delay: delaytime ? delaytime : 1400,
           disableOnInteraction: false,
           pauseOnMouseEnter: false,
         }}
@@ -33,7 +33,7 @@ const EventsSwiper = ({ EventsData }) => {
         {EventsData.map((data) => (
           <SwiperSlide key={data.id}>
             <Link
-              href={`/blogs/${data.id}`}
+              href={`/events/${data.id}`}
               className="md:mb-10 mb-8 rounded-xl cursor-pointer block
                 "
             >
@@ -41,12 +41,12 @@ const EventsSwiper = ({ EventsData }) => {
               <motion.div
                 whileHover={{ scale: 1.08 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
-                className="relative h-90 overflow-hidden block rounded"
+                className="relative h-110 overflow-hidden block rounded"
               >
                 <Image
                   src={data.image}
                   alt={data.id}
-                  className="object-cover rounded-xl"
+                  className="object-cover rounded-xl h-full w-full"
                   fill
                 />
               </motion.div>

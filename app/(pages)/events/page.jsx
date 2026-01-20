@@ -16,6 +16,7 @@ const Events = () => {
         heading={`Upcomming Event`}
         description={`From iconic parties to sold-out club nights, the energy never fades. Discover what’s coming next and reserve your place before it sells out.`}
         EventsData={UpcomingEventsData}
+        delaytime={1400}
       />
 
       {/* <Event
@@ -28,6 +29,7 @@ const Events = () => {
         heading={`Events we hosted`}
         description={`A showcase of moments brought to life — from exclusive parties to large-scale celebrations, our curated events have set the standard for unforgettable experiences, leaving lasting memories for every guest.`}
         EventsData={CompletedEventsData}
+        delaytime={1100}
       />
     </>
   );

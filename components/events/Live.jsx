@@ -2,15 +2,13 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Heading_desc from "../Heading_desc";
+import LiveData from '../../app/data/EventsOngoingData'
 
 const Live = ({ heading, description }) => {
   return (
     <div className="flex flex-col gap-4 md:mt-10">
       {/* Heading Section */}
-      <Heading_desc
-        title={heading}
-        description={description}
-      />
+      <Heading_desc title={heading} description={description} />
 
       {/* Image Animation */}
       <div className="flex justify-center">
@@ -38,13 +36,16 @@ const Live = ({ heading, description }) => {
           }}
           className="flex items-center justify-center px-10"
         >
-          <Image
-            src="/services/Bussiness-counselting.jpg"
-            width={300}
-            height={300}
-            alt="Business Consulting"
-            className="rounded-xl"
-          />
+          {LiveData.map((i) => (
+            <Image
+              key={i.id}
+              src={i.image}
+              width={300}
+              height={300}
+              alt={i.image}
+              className="rounded-xl"
+            />
+          ))}
         </motion.div>
       </div>
     </div>
