@@ -1,39 +1,86 @@
 const PrivacyPolicyData = [
   {
-    id: "intro",
-    title: "Introduction",
-    desc: "We respect your privacy and are committed to protecting your personal data. This Privacy Policy explains how we handle your information when you use our services.",
+    id: "data-controller",
+    title: "Data Controller",
+    points: [
+      "Southwave Entertainment is the data controller responsible for the collection and processing of your personal data."
+    ]
   },
   {
-    id: "collection",
+    id: "information-we-collect",
     title: "Information We Collect",
-    desc: "We may collect personal information such as name, email address, phone number, and usage data including interactions with our website.",
+    points: [
+      "Name, contact details, and booking-related information.",
+      "Payment details (processed securely via third-party payment providers).",
+      "Website usage data, including cookies and analytics."
+    ]
   },
   {
-    id: "usage",
-    title: "How We Use Information",
-    desc: "Your data is used to provide services, improve user experience, communicate updates, and comply with legal obligations.",
+    id: "legal-basis",
+    title: "Legal Basis for Processing",
+    points: [
+      "Performance of a contract.",
+      "Legitimate business interests.",
+      "Consent, where required."
+    ]
+  },
+  {
+    id: "how-we-use-data",
+    title: "How We Use Your Data",
+    points: [
+      "Process ticket purchases and private bookings.",
+      "Communicate essential event-related information.",
+      "Improve our services, events, and website functionality.",
+      "Comply with legal and regulatory obligations."
+    ]
+  },
+  {
+    id: "data-sharing",
+    title: "Data Sharing",
+    points: [
+      "We do not sell personal data.",
+      "Data may be shared only with trusted third parties such as payment processors, event partners, venues, or regulatory authorities where legally required."
+    ]
+  },
+  {
+    id: "data-retention",
+    title: "Data Retention",
+    points: [
+      "Personal data will be retained only for as long as necessary to fulfil the purposes outlined in this policy or as required by law."
+    ]
+  },
+  {
+    id: "your-rights",
+    title: "Your Rights",
+    points: [
+      "You have the right to access, correct, erase, or restrict the processing of your personal data.",
+      "You may lodge a complaint with the UK Information Commissioner’s Office (ICO)."
+    ]
+  },
+  {
+    id: "data-security",
+    title: "Data Security",
+    points: [
+      "We implement appropriate technical and organizational measures to protect personal data against unauthorized access, loss, or misuse."
+    ]
   },
   {
     id: "cookies",
-    title: "Cookies & Tracking",
-    desc: "We use cookies and similar technologies to track activity, analyze trends, and enhance functionality.",
+    title: "Cookies",
+    points: [
+      "Our website uses cookies to enhance user experience.",
+      "You may manage or disable cookies through your browser settings."
+    ]
   },
   {
-    id: "sharing",
-    title: "Information Sharing",
-    desc: "We do not sell your personal data. Information may be shared with trusted service providers or legal authorities when required.",
-  },
-  {
-    id: "security",
-    title: "Data Security",
-    desc: "We implement industry-standard security measures to protect your information from unauthorized access.",
-  },
-  {
-    id: "contact",
-    title: "Contact Us",
-    desc: "If you have any questions regarding this Privacy Policy, please contact us at privacy@example.com.",
-  },
+    id: "event-disclaimer",
+    title: "Event Disclaimer",
+    points: [
+      "Loud music, flashing lights, and special effects may be used during events.",
+      "Alcohol consumption is voluntary and at the attendee’s own discretion.",
+      "We reserve the right to refuse entry or remove any individual for safety, legal, or behavioral reasons."
+    ]
+  }
 ];
 
 export default PrivacyPolicyData;

@@ -1,12 +1,12 @@
 import PrivacyPolicyPage from "../../../components/policy/policy";
 import PolicyBanner from "../../../components/policy/PolicyBanner";
-import PrivacyPolicyData from "../../data/PrivacyPolicyData";
+import TermsData from "../../data/Terms&ConditionData";
 
 const TermsCondition = () => {
   return (
     <div className="min-h-screen">
       <PolicyBanner title={`Terms & Condition`} date={`Effective 1st Jan 2026`}/>
-      <PrivacyPolicyPage PolicyData={PrivacyPolicyData}/>
+      <PrivacyPolicyPage PolicyData={TermsData}/>
     </div>
   );
 };

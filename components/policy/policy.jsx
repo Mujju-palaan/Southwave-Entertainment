@@ -2,46 +2,51 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import sections from "../../app/data/PrivacyPolicyData";
 
-export default function PrivacyPolicyPage({PolicyData}) {
-  const [active, setActive] = useState("intro");
+export default function PrivacyPolicyPage({ PolicyData }) {
+  const [active, setActive] = useState("about-us");
 
   /* -------- Scroll Spy -------- */
   useEffect(() => {
     const handler = () => {
-      sections.forEach((section) => {
+      let current = PolicyData[0]?.id;
+
+      PolicyData.forEach((section) => {
         const el = document.getElementById(section.id);
         if (!el) return;
 
-        const rect = el.getBoundingClientRect();
-        if (rect.top <= 120 && rect.bottom >= 120) {
-          setActive(section.id);
-        }
+        const top = el.getBoundingClientRect().top;
+        if (top <= 140) current = section.id;
       });
+
+      setActive(current);
     };
 
     window.addEventListener("scroll", handler);
+    handler(); // initial sync
+
     return () => window.removeEventListener("scroll", handler);
-  }, []);
+  }, [PolicyData]);
 
   /* -------- Smooth Scroll -------- */
   const handleScrollTo = (id) => {
     const el = document.getElementById(id);
     if (!el) return;
 
-    el.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
+    const yOffset = -120; // match your scroll spy threshold
+    const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+    window.scrollTo({ top: y, behavior: "smooth" });
   };
 
   return (
     <main className="max-w-7xl mx-auto px-4 py-16">
       <div className="grid grid-cols-1 md:grid-cols-[25%_70%] gap-6">
         {/* ================= Sidebar ================= */}
-        <aside className="md:sticky md:top-35 h-fit flex flex-col md:justify-center md:items-center
-        md:pl-0 pl-4">
+        <aside
+          className="md:sticky md:top-35 h-fit flex flex-col md:justify-center md:items-center
+        md:pl-0 pl-4"
+        >
           {/* <h2 className="text-xl font-semibold mb-6 text-gray-900">
             Privacy Policy
           </h2> */}
@@ -51,7 +56,7 @@ export default function PrivacyPolicyPage({PolicyData}) {
               <li key={item.id} className="relative">
                 <button
                   onClick={() => handleScrollTo(item.id)}
-                  className={`block text-left text-sm w-full transition-colors ${
+                  className={`block text-left text-sm w-full transition-colors cursor-pointer ${
                     active === item.id
                       ? "text-indigo-600 font-medium"
                       : "text-gray-600 hover:text-gray-900"
@@ -74,7 +79,7 @@ export default function PrivacyPolicyPage({PolicyData}) {
 
         {/* ================= Content + Animation ================= */}
         <section className="md:pr-35 p-4 flex flex-col gap-10">
-          {sections.map((data) => (
+          {PolicyData.map((data) => (
             <motion.div
               key={data.id}
               id={data.id}
@@ -84,12 +89,35 @@ export default function PrivacyPolicyPage({PolicyData}) {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
+              <h1 className="text-gray-600">{data.info}</h1>
               <h3 className="md:text-2xl text-xl font-semibold mb-4 text-gray-900">
                 {data.title}
               </h3>
-              <p className="text-gray-500 leading-relaxed md:text-base text-sm">
-                {data.desc}
-              </p>
+
+              {/* If description exists */}
+              {/* {data.desc && (
+                <p className="text-gray-500 leading-relaxed md:text-base text-sm mb-4">
+                  {data.desc}
+                </p>
+              )} */}
+
+              {/* If points is a STRING */}
+              {typeof data.points === "string" && (
+                <p className="text-gray-500 leading-relaxed md:text-base text-sm">
+                  {data.points}
+                </p>
+              )}
+
+              {/* If points is an ARRAY */}
+              {Array.isArray(data.points) && data.points.length > 0 && (
+                <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-6">
+                  {data.points.map((li, i) => (
+                    <li key={i} className="leading-relaxed">
+                      {li}
+                    </li>
+                  ))}
+                </ul>
+              )}
             </motion.div>
           ))}
         </section>
@@ -97,6 +125,3 @@ export default function PrivacyPolicyPage({PolicyData}) {
     </main>
   );
 }
-
-
-
