@@ -2,9 +2,8 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Heading_desc from "../Heading_desc";
-import LiveData from '../../app/data/EventsOngoingData'
 
-const Live = ({ heading, description }) => {
+const Live = ({ heading, description, Data }) => {
   return (
     <div className="flex flex-col gap-4 md:mt-10">
       {/* Heading Section */}
@@ -36,7 +35,7 @@ const Live = ({ heading, description }) => {
           }}
           className="flex items-center justify-center px-10"
         >
-          {LiveData.map((i) => (
+          {Data.map((i) => (
             <Image
               key={i.id}
               src={i.image}

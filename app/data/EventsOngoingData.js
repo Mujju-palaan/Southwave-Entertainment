@@ -1,7 +1,7 @@
 const LiveData = [
   {
     "id": "1",
-    "image": "/events/southwave-entertainment-upcoming-events-telugu-culture-london-uk.jpeg"
+    "image": "/events/southwave-entertainment-upcoming-events-dj-night-life-london-uk.jpeg"
   },
   
 ]

@@ -1,5 +1,5 @@
 import UpcomingEventsData from "../../data/EventsUpcomingData";
-// import OngoingEventsData from "../../data/EventsOngoingData";
+import LiveData from "../../data/EventsOngoingData";
 import CompletedEventsData from "../../data/EventsCompletedData";
 import Event from "../../../components/events/Event";
 import Live from "../../../components/events/Live";
@@ -10,6 +10,7 @@ const Events = () => {
       <Live
         heading={`Live Events`}
         description={`From live performances to energetic crowd moments, our events are all about good music and great experiences. See what’s coming up and be part of the next one.`}
+        Data={LiveData}
       />
 
       <Event

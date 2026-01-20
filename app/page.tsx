@@ -6,6 +6,7 @@ import ServiceMenu from "../components/services/ServiceMenu";
 import Live from "../components/events/Live";
 import GalleryHome from "../components/gallery/GalleryHome";
 import Heading_desc from "@/components/Heading_desc";
+import LiveData from '../app/data/EventsOngoingData'
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Live
         heading={`Live Events`}
         description={`From live performances to energetic crowd moments, our events are all about good music and great experiences. See what’s coming up and be part of the next one.`}
+        Data={LiveData}
       />
 
       {/* <Event

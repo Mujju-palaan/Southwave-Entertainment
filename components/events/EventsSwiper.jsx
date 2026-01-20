@@ -41,12 +41,12 @@ const EventsSwiper = ({ EventsData, delaytime }) => {
               <motion.div
                 whileHover={{ scale: 1.08 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
-                className="relative h-110 overflow-hidden block rounded"
+                className="relative h-100 overflow-hidden block rounded-2xl"
               >
                 <Image
                   src={data.image}
                   alt={data.id}
-                  className="object-cover rounded-xl h-full w-full"
+                  className="object-contain rounded-2xl h-auto w-full"
                   fill
                 />
               </motion.div>
