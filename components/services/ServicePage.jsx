@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import Image from "next/image";
 import Heading_desc from "../Heading_desc";
 import ServiceData from "../../app/data/ServiceData";
@@ -27,18 +27,40 @@ const ServicePage = () => {
         title={`Our Services`}
         description={`We’re a crew of strategists, creators, and marketers helping fearless brands break through the noise and shine with purpose.`}
       />
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 ">
         {ServiceData.map((e) => (
-          <div key={e.id}
-          ref={(el) => (refs.current[e.slug] = el)}
-           className="md:px-30 p-6 md:flex xs:flex-col md:gap-18">
+          <div
+            key={e.id}
+            ref={(el) => (refs.current[e.slug] = el)}
+            className="md:px-30 p-6 md:flex xs:flex-col md:gap-18"
+          >
             <div className="flex flex-col gap-3 w-full">
               <h1 className="md:text-2xl font-semibold">{`${e.id}. ${e.title} :`}</h1>
-              <p className="md:text-[16px] text-xs text-stone-600">{e.description}</p>
+              <p className="md:text-[16px] text-xs text-stone-600 ">
+                {e.description}
+              </p>
+
+              {/* If points is a STRING */}
+              {/* {typeof e.bestFor === "string" && (
+                <p className="text-gray-500 leading-relaxed md:text-base text-sm">
+                  {e.bestFor}
+                </p>
+              )} */}
+
+              {/* If points is an ARRAY */}
+              {Array.isArray(e.bestFor) && e.bestFor.length > 0 && (
+                <ul className="list-disc pl-5 space-y-0 text-gray-700 mb-6 md:text-[14px] text-xs">
+                  {e.bestFor.map((li, i) => (
+                    <li key={i} className="leading-relaxed">
+                      {li}
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
             <div className="md:w-full rounded-2xl object-cover md:mt-0 mt-2">
               <Image
-                className="object-cover h-50 rounded-2xl"
+                className="object-cover md:h-auto h-50 rounded-2xl"
                 src={e.image}
                 width={250}
                 height={250}
@@ -54,5 +76,4 @@ const ServicePage = () => {
   );
 };
 
-
-export default ServicePage
+export default ServicePage;
