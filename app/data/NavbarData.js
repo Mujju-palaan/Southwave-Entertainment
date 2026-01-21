@@ -4,9 +4,9 @@ const dropdownNavs = [
     label: "Events",
     navs: [
       {
-        title: "Analytics",
-        desc: "Duis aute irure dolor in reprehenderit",
-        path: "/comingsoon",
+        title: "Services",
+        desc: "An overview of how we deliver value through reliable and tailored solutions.",
+        path: "/services",
         icon: (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -25,9 +25,9 @@ const dropdownNavs = [
         ),
       },
       {
-        title: "Reports",
-        desc: "Duis aute irure dolor in reprehenderit",
-        path: "/comingsoon",
+        title: "Testimonials",
+        desc: "Hear from our clients and guests",
+        path: "/testimonials",
         icon: (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -60,9 +60,9 @@ const dropdownNavs = [
         ),
       },
       {
-        title: "Testimonials",
-        desc: "Hear from our clients and guests",
-        path: "/testimonials",
+        title: "Gallery",
+        desc: "Every frame captures the vibe",
+        path: "/gallery",
         icon: (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -99,9 +99,9 @@ const dropdownNavs = [
         ),
       },
       {
-        title: "Careers",
-        desc: "Duis aute irure dolor in reprehenderit",
-        path: "/comingsoon",
+        title: "Faq's",
+        desc: "Questions designed to help you quickly",
+        path: "/faqs",
         icon: (
           <svg
             xmlns="http://www.w3.org/2000/svg"

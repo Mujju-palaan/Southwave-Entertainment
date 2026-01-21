@@ -5,7 +5,7 @@ const Services = () => {
   
 
   return (
-    <Suspense fallback={null}>
+    <Suspense fallback={<div>...Loading</div>}>
       <ServicesClient />
     </Suspense>
   );

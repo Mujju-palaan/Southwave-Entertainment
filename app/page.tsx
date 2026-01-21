@@ -44,13 +44,13 @@ export default function Home() {
         <BlogSwiper />
       </div>
 
-        <Heading_desc
+        {/* <Heading_desc
           title={`Partiers gallery`}
           description={`A snapshot of the energy, the crowd, and the moments that define our nights. Every frame captures the vibe, the movement, and the people who made it unforgettable.`}
-        />
-        <GalleryHome />
+        /> */}
+        {/* <GalleryHome /> */}
 
-        <Testimonials />
+        {/* <Testimonials /> */}
 
     </div>
   );

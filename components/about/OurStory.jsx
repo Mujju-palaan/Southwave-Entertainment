@@ -15,10 +15,10 @@ const OurStory = () => {
           </div>
           <div>
             Our team of experts works tirelessly to bring your vision to life,
-            ensuring every project we understant not only meets but exceeds
-            expectations. We are dedicated to transforming your ideas into
-            impactful digital experirnces that resonate with your audience and
-            drive sucess.
+            ensuring every project we undertake not only meets but exceeds
+            expectations. We are committed to transforming ideas into impactful
+            digital experiences that connect with your audience and deliver
+            lasting results.
           </div>
           <div className="h-full w-full md:mt-6 mt-2 mb-2">
             <Image
@@ -31,29 +31,38 @@ const OurStory = () => {
           </div>
         </div>
 
-        <div className="bg-indigo-500 text-amber-50  lg:text-lg text-[12px] lg:p-10 md:p-8 p-4 rounded-xl 
-            md:block hidden w-full ">
-          <span className="flex flex-row-reverse text-cyan-300 text-md md:text-4xl font-serif 
-          font-semibold text-end lg:pb-6">
+        <div
+          className="bg-indigo-500 text-amber-50  lg:text-lg text-[12px] lg:p-10 md:p-8 p-4 rounded-xl 
+            md:block hidden w-full "
+        >
+          <span
+            className="flex flex-row-reverse text-cyan-300 text-md md:text-4xl font-serif 
+          font-semibold text-end lg:pb-6"
+          >
             <h1 className="text-xl">ABOUT US</h1>
             {/* <MdPerson/> */}
           </span>
 
-          <p className="">
-            We belive in the power of collaboration and creativity by partnering
-            closely with our clients, we gain a deep understanding of their
-            unique needs and goals, allows us to deliver customized solutions
-            that truly make a difference. Our holistic apporach integrates
-            design, technology and strategy to create sealess and engaging
-            digital experiences.
+          <p className="text-[16px]">
+            We believe in the power of collaboration and creativity. By working
+            closely with our clients and partners, we gain a deep understanding
+            of their vision and goals—allowing us to deliver experiences that
+            truly make an impact.
           </p>
           <br />
-          <p className="">
-            By staying ahed of the curve and embaracing the latest trends
-            audiencetechnologies, we ensure that we provide cutting edges
-            solutions that not only address current challenges but aslo
-            anticipate future opportunities. Lets us help you navigate the
-            digital landscape and achieve your bussiness objectives with flair.
+          <p className="text-[16px]">
+            Our approach brings together music, artists, and event expertise to
+            create seamless, high-energy experiences that audiences connect with
+            and remember. From intimate gatherings to large-scale events, we
+            focus on detail, flow, and vibe to ensure every moment feels right.
+          </p>
+          <br />
+          <p className="text-[16px]">
+            By staying ahead of trends and embracing fresh ideas in
+            entertainment and nightlife, we create events that don’t just meet
+            expectations—they set the mood and raise the bar. Let us help you
+            turn your ideas into unforgettable experiences that leave a lasting
+            impression.
           </p>
         </div>
       </div>
