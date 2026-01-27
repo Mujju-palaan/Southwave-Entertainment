@@ -4,6 +4,7 @@ import dropdownNavs from "@/app/data/NavbarData";
 import Image from "next/image";
 import NavLink from "./NavLink";
 import Link from "next/link";
+import MotionButton from "../home/MotionButton";
 
 const Navbar = () => {
   const [state, setState] = useState(false);
@@ -226,14 +227,16 @@ const Navbar = () => {
                     Log in
                   </a>
                 </li> */}
-                <li>
-                  <Link
-                    href="https://www.fatsoma.com/e/sk27fua9/tolly-wave-night-london"
-                    className="block py-3 px-4 font-medium text-center text-white bg-indigo-800 hover:bg-indigo-500 active:bg-indigo-700 active:shadow-none rounded-lg shadow md:inline"
-                  >
+
+                <Link
+                  href="https://www.fatsoma.com/e/sk27fua9/tolly-wave-night-london"
+                  target="_blank"
+                  // className="block py-3 px-4 font-medium text-center text-white bg-indigo-800 hover:bg-indigo-500 active:bg-indigo-700 active:shadow-none rounded-lg shadow md:inline"
+                >
+                  <MotionButton className={`md:p-3 p-2 text-white`}>
                     Book Now
-                  </Link>
-                </li>
+                  </MotionButton>
+                </Link>
               </div>
             </ul>
           </div>

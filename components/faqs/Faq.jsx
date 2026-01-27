@@ -59,7 +59,7 @@ const Faq = () => {
                 </button>
                 {openQuestion === index && (
                   <div className="px-6 pb-4">
-                    <p className="text-slate-700">{faq.answer}</p>
+                    <div className="text-slate-700">{faq.answer}</div>
                   </div>
                 )}
               </div>

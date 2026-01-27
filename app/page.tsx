@@ -6,8 +6,8 @@ import ServiceMenu from "../components/services/ServiceMenu";
 import Live from "../components/events/Live";
 import GalleryHome from "../components/gallery/GalleryHome";
 import Heading_desc from "@/components/Heading_desc";
-import LiveData from '../app/data/EventsOngoingData'
-import Testimonials from './(service)/testimonials/page'
+import LiveData from "../app/data/EventsOngoingData";
+import Testimonials from "./(service)/testimonials/page";
 
 export default function Home() {
   return (
@@ -17,7 +17,14 @@ export default function Home() {
       {/* ------------- Events  ------------- */}
       <Live
         heading={`Live Events`}
-        description={`From live performances to energetic crowd moments, our events are all about good music and great experiences. See what’s coming up and be part of the next one.`}
+        description={
+          <>
+            From live performances to energetic crowd moments, our events are
+            all about good music and great experiences. See what’s coming up and
+            be part of the next one. <br />{" "}
+            <strong>Event booking available — click the poster to reserve your spot</strong>
+          </>
+        }
         Data={LiveData}
       />
 
@@ -30,7 +37,6 @@ export default function Home() {
       <div className="md:my-15">
         <ServiceMenu />
       </div>
-      
 
       {/* ------------- status bar ------------- */}
       <Status />
@@ -44,14 +50,13 @@ export default function Home() {
         <BlogSwiper />
       </div>
 
-        {/* <Heading_desc
+      {/* <Heading_desc
           title={`Partiers gallery`}
           description={`A snapshot of the energy, the crowd, and the moments that define our nights. Every frame captures the vibe, the movement, and the people who made it unforgettable.`}
         /> */}
-        {/* <GalleryHome /> */}
+      {/* <GalleryHome /> */}
 
-        {/* <Testimonials /> */}
-
+      {/* <Testimonials /> */}
     </div>
   );
 }

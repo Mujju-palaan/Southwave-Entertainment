@@ -34,7 +34,7 @@ const Live = ({ heading, description, Data }) => {
             once: false, // set false if you want it every time it enters view
             amount: 0.2, // triggers when 50% visible
           }}
-          className="flex items-center justify-center px-10"
+          className="flex gap-8 items-center justify-center px-10"
         >
           {Data.map((i) => (
             <Link key={i.id}
