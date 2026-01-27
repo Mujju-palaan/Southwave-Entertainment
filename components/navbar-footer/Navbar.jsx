@@ -12,7 +12,7 @@ const Navbar = () => {
     idx: null,
   });
 
-    // 🔹 Scroll-based visibility states
+  // 🔹 Scroll-based visibility states
   const [showNav, setShowNav] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -59,10 +59,9 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
-
   return (
     <>
-    {/* ---mobile----- */}
+      {/* ---mobile----- */}
       <nav
         className={`
           fixed top-0 w-full z-30 
@@ -121,8 +120,10 @@ const Navbar = () => {
               state ? "block" : "hidden"
             }`}
           >
-            <ul className="items-center space-y-3 md:flex lg:space-x-8 space-x-2 md:space-y-0 
-                text-[14px] lg:text-[18px] font-semibold text-stone-800">
+            <ul
+              className="items-center space-y-3 md:flex lg:space-x-8 space-x-2 md:space-y-0 
+                text-[14px] lg:text-[18px] font-semibold text-stone-800"
+            >
               {navigation.map((item, idx) => {
                 return (
                   <li key={idx}>
@@ -136,7 +137,6 @@ const Navbar = () => {
                           })
                         }
                       >
-                      
                         {item.title}
                         {drapdownState.idx == idx && drapdownState.isActive ? (
                           <svg
@@ -166,19 +166,12 @@ const Navbar = () => {
                           </svg>
                         )}
                       </button>
-                    ) : (
-                      !state ?
-                      <NavLink
-                        href={item.path}
-                        className="block "
-                      >
+                    ) : !state ? (
+                      <NavLink href={item.path} className="block ">
                         {item.title}
                       </NavLink>
-                      : <a
-                        title={item.title}
-                        href={item.path}
-                        className="block "
-                      >
+                    ) : (
+                      <a title={item.title} href={item.path} className="block ">
                         {item.title}
                       </a>
                     )}
@@ -225,21 +218,21 @@ const Navbar = () => {
                 );
               })}
               <div className="flex-1 items-center justify-end gap-x-6 space-y-3 md:flex md:space-y-0">
-                <li>
+                {/* <li>
                   <a
                     href="javascript:void(0)"
                     className="block py-3 text-center text-white-700 hover:text-gray-600 border rounded-lg md:border-none"
                   >
                     Log in
                   </a>
-                </li>
+                </li> */}
                 <li>
-                  <a
-                    href="javascript:void(0)"
+                  <Link
+                    href="https://www.fatsoma.com/e/sk27fua9/tolly-wave-night-london"
                     className="block py-3 px-4 font-medium text-center text-white bg-indigo-800 hover:bg-indigo-500 active:bg-indigo-700 active:shadow-none rounded-lg shadow md:inline"
                   >
-                    Sign in
-                  </a>
+                    Book Now
+                  </Link>
                 </li>
               </div>
             </ul>

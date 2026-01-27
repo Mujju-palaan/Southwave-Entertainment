@@ -6,10 +6,7 @@ import Link from "next/link";
 
 const Live = ({ heading, description, Data }) => {
   return (
-    <Link
-      href={`https://www.fatsoma.com/e/sk27fua9/tolly-wave-night-london`}
-      className="flex flex-col gap-4 md:mt-10"
-    >
+    <div className="flex flex-col gap-4 md:mt-10">
       {/* Heading Section */}
       <Heading_desc title={heading} description={description} />
 
@@ -40,18 +37,21 @@ const Live = ({ heading, description, Data }) => {
           className="flex items-center justify-center px-10"
         >
           {Data.map((i) => (
+            <Link key={i.id}
+            href={`https://www.fatsoma.com/e/sk27fua9/tolly-wave-night-london`}
+            target="_blank">
             <Image
-              key={i.id}
               src={i.image}
               width={300}
               height={300}
               alt={i.image}
               className="rounded-xl"
             />
+            </Link>
           ))}
         </motion.div>
       </div>
-    </Link>
+    </div>
   );
 };
 
