@@ -2,10 +2,14 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Heading_desc from "../Heading_desc";
+import Link from "next/link";
 
 const Live = ({ heading, description, Data }) => {
   return (
-    <div className="flex flex-col gap-4 md:mt-10">
+    <Link
+      href={`https://www.fatsoma.com/e/sk27fua9/tolly-wave-night-london`}
+      className="flex flex-col gap-4 md:mt-10"
+    >
       {/* Heading Section */}
       <Heading_desc title={heading} description={description} />
 
@@ -47,7 +51,7 @@ const Live = ({ heading, description, Data }) => {
           ))}
         </motion.div>
       </div>
-    </div>
+    </Link>
   );
 };
 

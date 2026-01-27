@@ -31,7 +31,7 @@ const Bannervideo = () => {
           </h3>
           <div>
             {" "}
-            <Link href={``}>
+            <Link target="_blank" href={`https://www.fatsoma.com/e/sk27fua9/tolly-wave-night-london`}>
               <MotionButton
                 className={`md:p-4 p-3 md:text-2xl text-lg text-sans`}
               >
