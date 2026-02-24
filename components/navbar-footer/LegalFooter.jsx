@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { Fragment, useEffect, useState } from "react";
 import { FaInstagram,FaFacebook,FaDiscord, FaTwitter, FaYoutube   } from "react-icons/fa";
+import { FcGallery } from "react-icons/fc";
+
 
 const LegalFooter = () => {
   const [year, setYear] = useState(new Date().getFullYear());
@@ -10,6 +12,11 @@ const LegalFooter = () => {
     setYear(new Date().getFullYear());
   }, []);
   const socialData = [
+    {
+      // color: "text-red-600",
+      href: "https://drive.google.com/drive/u/0/folders/1I-J8cTettyEv_QGeB4LyB2I2EQkKPccE",
+      icon: FcGallery ,
+    },
     {
       color: "text-[#ee2a7b]",
       href: "https://www.instagram.com/southwave_london/#",
@@ -35,6 +42,7 @@ const LegalFooter = () => {
       href: "https://www.youtube.com/southwave_london/#",
       icon: FaYoutube ,
     },
+    
   ];
   return (
     <div className="max-w-7xl mx-auto px-4 md:px-8">

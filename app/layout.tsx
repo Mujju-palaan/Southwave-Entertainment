@@ -7,7 +7,7 @@ import NavEdit from '../components/navbar-footer/NavEdit'
 
 import Footer from '../components/navbar-footer/Footer'
 import Whatsapp from '../components/whatsapp/Whatsapp'
-
+import FloatingButton from '../components/whatsapp/FloatingButton'
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -38,6 +38,7 @@ export default function RootLayout({
         {/* <NavEdit /> */}
         <div className="pb-25"></div>
         {children}
+        <FloatingButton />
         <Whatsapp />
         <Footer />
         <SpeedInsights />
